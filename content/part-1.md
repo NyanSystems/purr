@@ -117,7 +117,7 @@ int main() {
 
 Keyin esa, terminalchani CMakeLists.txt yoki Makefile turgan joydan agar cmake da boshlangan bo’lsa loyihani,
 
-```shell
+```bash
 # Agar build papka haliyam yaratmagan bo’lsak
 mkdir build
 # Build ichiga kirib olamiz
@@ -126,7 +126,7 @@ cd build
 
 build ichiga kirib olishimizdan maqsad, cmake hamma generatsion vaqtinchalik axlatlarni build papkasini ichida yaratib tashaydi. Ho’sh, keyin
 
-```shell
+```bash
 # CMake hamma kerakli narsani yaratib olishi uchun
 cmake ..
 # Kompilyatsiya qilamiz loyihamizni
@@ -137,13 +137,13 @@ cmake --build ..
 
 Endi esa, gnu/gcc chilarimiz, terminalni loyiha turgan joyidan ochib turib, oddiygina
 
-```shell
+```bash
 make
 ```
 
 va bo’ldi! Shunday build papkani ochib qarasaylar, nyagcc degan binarnik turibdi, build papkani ichida
 
-```shell
+```bash
 # Qani kefteme
 cd build
 # Ishga tushurib ko'ramiz
