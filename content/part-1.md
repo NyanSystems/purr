@@ -63,7 +63,7 @@ set(CMAKE_C_STANDARD 23)
 tiqishtiramiz. Bu esa nechinchi avlod standartizatsiyasini ishlatish belgilab beradi. Masalan C99 bor, C++11 bor, C++14, 23 va hokazo. Har bir evolyutsiya nimadir yangi narsa olib kiradi (ammo nimagadir C++ da har yangi evolyutsiya bilan omilashaveradi… ha-ha, hazil). Biz eng yangi C ishlatamiz (xotya 99 ishlatdik nima, 23 ishlatdik nima… ha-ha). Endi esa fayllarimiz haqida CMake ga tushuntirib beramiz. Men tartibli perfeksionistman, hamma narsani chiroyli va tartibda qilib borishni yoqitraman. Odamlar hamma narsani proyekt boshida saqlashsa, men header fayllarni “includes” papkasida, C kodlarni “src” va qo’shimcha yordamchi codebaselarni “helpers” da… Shunga, endi CMake ga
 
 ```cmake
-file(GLOB nyan_SRC CONFIGURE_DEPENDS `includes/*.h` `src/*.c` `helpers/*.c` `helpers/*.h`)
+file(GLOB nyan_SRC CONFIGURE_DEPENDS "includes/*.h" "src/*.c" "helpers/*.c" "helpers/*.h")
 ```
 
 yozish bilan biz, shu papkalar ichidan nimalar axtarish tushuntirib beramiz. Adashmasam, helpers va includes yaratuvdik, endi src papkasini ham yaratib qo’yamiz va olg’a. Keyin,
