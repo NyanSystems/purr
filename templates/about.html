@@ -1,0 +1,38 @@
+{% extends "index.html" %}
+
+{% block title %}Biz haqimizda - {{ config.title }}{% endblock title %}
+
+{% block navbar %}
+{% for item in config.extra.zola386_menu %}
+<li>
+  <a href="{{ config.base_url }}/{{item.path}}"><span>{{ item.name }}</span></a>
+</li>
+{% endfor %}
+{% endblock %}
+
+{% block header %}
+<div class="alert alert-block navmargin">
+  <h1>Biz haqimizda qisqa</h1>
+</div>
+{% endblock header %}
+
+{% block main %}
+<p>
+  Salom do'stlar! Biz  Nyan Systems dasturchilarimiz va biz pastki darajali
+  injineriyaga judayam qiziqazmi!
+  <br/>
+  <br/>
+  Bizning asosiy maqsadimiz bu o'zimiz jamiyat bilan birgalikda konsepsiya loyihalar 
+  yaratish davrida ular haqida maqolalar yozib o'zbek segmentini pastki darajali
+  dasturlash bilan tanishtirishdir.
+  <br/>
+  <br/>
+  Hamda, faqat o'rgatuvchi maqolalar yozishgina bo'lmay, har xil eksperimental 
+  loyihalar rivojlanatirish va teoriyalar yaratishga ham harakat qilamiz.
+</p>
+<p>
+  <a href="{{ config.base_url }}" class="btn btn-info" role="button">Asosiy</a>
+  <a href="{{ config.base_url }}/categories" class="btn btn-info" role="button">Kategoriyalar</a>
+  <a href="{{ config.base_url }}/tags" class="btn btn-info" role="button">Teglar</a>
+</p>
+{% endblock main %}
