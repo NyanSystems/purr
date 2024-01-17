@@ -27,7 +27,6 @@ zola386_menu = [
   {path="categories", name="Kategoriyalar"},
   {path="tags", name="Teglar"},
   {path="about", name="Biz haqimizda"},
-  {path="https://t.me/nyansystems", name="Telegram"}
 ]
 
 ### THIRD PARTY
