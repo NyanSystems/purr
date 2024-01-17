@@ -2,7 +2,7 @@ base_url = "https://blog.nyan.uz"
 # theme = "zola.386"
 
 # default_language = "en"
-title = "Nyan Systems Blog"
+title = "Nyan Systems"
 description = "Bizning mikrosistemalarga sayohatimiz..."
 
 highlight_code = true
