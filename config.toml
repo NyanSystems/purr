@@ -27,6 +27,7 @@ zola386_menu = [
   {path="categories", name="Kategoriyalar"},
   {path="tags", name="Teglar"},
   {path="about", name="Biz haqimizda"},
+  {path="https://t.me/nyansystems", name="Telegram"}
 ]
 
 ### THIRD PARTY
@@ -35,6 +36,7 @@ zola386_menu = [
 
 ### SOCIAL MEDIA
 image = "https://raw.githubusercontent.com/lopes/zola.386/master/screenshot.png"
+telegram = "https://t.me/nyansystems"
 # twitter_user = "nyansystems"
 # linkedin_user = "nyansystems"
 github_user = "NyanSystems"
