@@ -78,7 +78,7 @@ deb yozib qo’yamiz. Bu bilan biz CMake ga boya file(… deb qayerlardan nima q
 set(CMAKE_BUILD_TYPE Debug)
 ```
 
-deb yozib qo’yamiz pasidan. Bu bilan esa kompilyatsiya qilgan dasturimiz ichiga xatoliklar topish uchun debag marka osa olish qobiliyatini ochib beradi. Reliz chiqarganda albatta biron kimdir binarnikimiz ichida nima borligini axtarib timirskilanib yurmasligi uchun o’chirib qo’yamiz, hozircha esa o’zimiz uchun yoqiq tursin. Shunday qilib agar hamma qadamlar to’g’ri bajarib borgan bo’lsangiz, taxminan shunday fayl chiqishi kerak sizlarda. Bu fayldagi biron nima sizda yo’q bo’lsa, hammasi joyida, biz shu joylariga yetib bormadik xolos. Tekshirib oling va qani olg’a.
+deb yozib qo’yamiz pasidan. Bu bilan esa kompilyatsiya qilgan dasturimiz ichiga xatoliklar topish uchun debag marka osa olish qobiliyatini ochib beradi. Reliz chiqarganda albatta biron kimdir binarnikimiz ichida nima borligini axtarib timirskilanib yurmasligi uchun o’chirib qo’yamiz, hozircha esa o’zimiz uchun yoqiq tursin. Shunday qilib agar hamma qadamlar to’g’ri bajarib borgan bo’lsangiz, taxminan [shunday fayl](https://github.com/NyanSystems/nya/blob/9f0386f760ad07fbdde51522f9261f89eb01b397/CMakeLists.txt) chiqishi kerak sizlarda. Bu fayldagi biron nima sizda yo’q bo’lsa, hammasi joyida, biz shu joylariga yetib bormadik xolos. Tekshirib oling va qani olg’a.
 
 Haa GNU chilar, tayyormisizlar?) Tayyor turilar, hozir yaxshigina itarilamiz… Makefile yozish CMake nikiga qaraganda undanda gemoroyroq. Qani, loyiha asosiy joyidan “Makefile” degan fayl yaratamiz va ichiga:
 
@@ -102,7 +102,7 @@ clean:
  rm -rf ${OBJECTS}
 ```
 
-yozib qo’yamiz, ishlab bo’lgandan keyin keraksiz qayta generatsiya bo’luvchi chiqindilardan tozalab turishga. Agar hamma qadamlarni to’g’ri bajargan bo’lsangiz, sizlarda shu faylga o’xshash bo’lishi kerak, faqat vahima qilmaylar! Nimaiki `./build/…` deb boshlagan narsa bo’lsa shuni ignor qililar, bo’ldi… Lekin oldindan shu narsaga o’zilarni tayyorlab borilar, o’zilar shu narsaga ko’ndilar, men majburlamadim )… 
+yozib qo’yamiz, ishlab bo’lgandan keyin keraksiz qayta generatsiya bo’luvchi chiqindilardan tozalab turishga. Agar hamma qadamlarni to’g’ri bajargan bo’lsangiz, sizlarda [shu faylga](https://github.com/NyanSystems/nya/blob/9f0386f760ad07fbdde51522f9261f89eb01b397/Makefile) o’xshash bo’lishi kerak, faqat vahima qilmaylar! Nimaiki `./build/…` deb boshlagan narsa bo’lsa shuni ignor qililar, bo’ldi… Lekin oldindan shu narsaga o’zilarni tayyorlab borilar, o’zilar shu narsaga ko’ndilar, men majburlamadim )… 
 
 Va nihoyat eng boshlang’ich instruksiyalar yozib olgach, `src` pakasini ichida `main.c` degan fayl yaratib ichiga shu code chani tashab qo’yamiz.
 
