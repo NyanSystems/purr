@@ -51,16 +51,16 @@ project(nya C)
 deb yozvoramiz. Bunda loyiha nomi va u qaysi til ishlatishini ko’rsatamiz. CMake C++ loyihalarda ham ishlatiladi, shunga ko’rsatib ketish kerak bo’ladi. Keyin pasidan
 
 ```cmake
+include_directories(./includes ./helpers)
+```
+
+yozish orqali qayerdan header fayllarni topishni tushuntiramiz va ketidan tezgina “includes” va “helpers” degan papkachalarni yaratib qo’yamiz loyiha turgan joydan (project root path deymiz inglizchada). Undanam pasidan
+
+```cmake
 set(CMAKE_C_STANDARD 23)
 ```
 
 tiqishtiramiz. Bu esa nechinchi avlod standartizatsiyasini ishlatish belgilab beradi. Masalan C99 bor, C++11 bor, C++14, 23 va hokazo. Har bir evolyutsiya nimadir yangi narsa olib kiradi (ammo nimagadir C++ da har yangi evolyutsiya bilan omilashaveradi… ha-ha, hazil). Biz eng yangi C ishlatamiz (xotya 99 ishlatdik nima, 23 ishlatdik nima… ha-ha). Endi esa fayllarimiz haqida CMake ga tushuntirib beramiz. Men tartibli perfeksionistman, hamma narsani chiroyli va tartibda qilib borishni yoqitraman. Odamlar hamma narsani proyekt boshida saqlashsa, men header fayllarni “includes” papkasida, C kodlarni “src” va qo’shimcha yordamchi codebaselarni “helpers” da… Shunga, endi CMake ga
-
-```cmake
-include_directories(./includes ./helpers)
-```
-
-yozish orqali qayerdan header fayllarni topishni tushuntiramiz va ketidan tezgina “includes” va “helpers” degan papkachalarni yaratib qo’yamiz loyiha turgan joydan (project root path deymiz inglizchada). Va yana pasidan
 
 ```cmake
 file(GLOB nyan_SRC CONFIGURE_DEPENDS `includes/*.h` `src/*.c` `helpers/*.c` `helpers/*.h`)
