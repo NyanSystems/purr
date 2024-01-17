@@ -130,7 +130,7 @@ build ichiga kirib olishimizdan maqsad, cmake hamma generatsion vaqtinchalik axl
 # CMake hamma kerakli narsani yaratib olishi uchun
 cmake ..
 # Kompilyatsiya qilamiz loyihamizni
-cmake --build ..
+cmake --build .
 # Ishga tushuramiz
 ./nya
 ```
