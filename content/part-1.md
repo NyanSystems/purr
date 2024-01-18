@@ -6,7 +6,7 @@ draft = false
 slug = "part-1"
 
 [taxonomies]
-categories = ["til"]
+categories = ["dasturlash tili"]
 tags = ["nya", "nyan", "boshlangich"]
 
 [extra]
