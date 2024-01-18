@@ -3,7 +3,7 @@ title = "Boshlaymizmi? (1-qism)"
 description = "Dasturlash tilimiz yozishni boshlashdan avval muhitni tayyorlab olamiz."
 date = 2024-01-17
 draft = false
-slug = "part-1"
+slug = "lang-part-1"
 
 [taxonomies]
 categories = ["dasturlash tili"]
