@@ -7,7 +7,7 @@ slug = "part-1"
 
 [taxonomies]
 categories = ["dasturlash tili"]
-tags = ["nya", "nyan", "boshlangich"]
+tags = ["nya", "boshlangich"]
 
 [extra]
 comments = true
