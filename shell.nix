@@ -11,6 +11,8 @@ pkgs.mkShell rec {
 
   packages = with pkgs; [
     zola
+    lolcat
+    figlet
   ];
 
   # Terminaldagi muhitni ishlash uchun kerakli qismlar sozlash.
@@ -18,5 +20,18 @@ pkgs.mkShell rec {
     icon = "f121";
   in ''
     export PS1="$(echo -e '\u${icon}') {\[$(tput sgr0)\]\[\033[38;5;228m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]} (${name}) \\$ \[$(tput sgr0)\]"
+
+    figlet -f slant "${name}" | lolcat  
+    printf "\n\n"
+    zola serve &
+    SERVER_PID=$!
+
+    finish() 
+    {
+      printf "\nTime to say goodbye, Nya!\n" | lolcat
+      kill $SERVER_PID
+    }
+
+    trap finish EXIT
   '';
 }
