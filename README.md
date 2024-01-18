@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://raw.githubusercontent.com/NyanSystems/.github/main/pictures/nya/header.gif?sanitize=true"/>
+    <img src="https://raw.githubusercontent.com/NyanSystems/.github/main/pictures/purr/header.gif?sanitize=true"/>
 </p>
 
 <h2 align="center">Purr</h2>
