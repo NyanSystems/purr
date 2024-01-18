@@ -160,4 +160,4 @@ degan habar ko’rsatishi kerak.
 
 Tamom vassalom bugunga. Bu qismni hamma narsani sozlab tayyorlab olish uchun ketqazdim. Bilaman, endi kirib kerganlar hozir betidan ketma-ket tarsaki yeyayotganday his qilishayabdi, lekin keyingi qismlardan hech yoq ozgina bo’lsada (unchamas, ha-ha) osonlashadi. Bugunga esa hammaga hayr!
 
-E-ha, aytgancha, agar biron savol yoki kompilyator, tillar bo'yicha qiziqtirgan savol yoki taklif bo'lsa, tortinmasdan telegram chatimizga kiraverasiz: [@nyansystemschat](https://t.me/nyansystemschat)
+E-ha, aytgancha, agar biron kompilyator, tillar bo'yicha qiziqtirgan savol yoki taklif bo'lsa, tortinmasdan telegram chatimizga kiraverasiz: [@nyansystemschat](https://t.me/nyansystemschat)
