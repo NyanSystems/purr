@@ -1,7 +1,7 @@
 +++
 title = "Arxitekturani tuzib borami (2-qism)"
 description = "Tayyorlab bo'lgach, endi rejalar qilgan holda yozishni boshlaymiz."
-date = 2024-01-18
+date = 2024-01-19
 draft = false
 slug = "lang-part-2"
 
