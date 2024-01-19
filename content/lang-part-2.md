@@ -1,5 +1,5 @@
 +++
-title = "Arxitekturani tuzib borami (2-qism)"
+title = "Arxitekturani tuzib boramiz (2-qism)"
 description = "Tayyorlab bo'lgach, endi rejalar qilgan holda yozishni boshlaymiz."
 date = 2024-01-19
 draft = false
@@ -13,15 +13,15 @@ tags = ["nya", "struktura"]
 comments = true
 +++
 
-As-salo-mu, a-ley-ko'm! Qani darsimizni yana bugun boshlaymiz. Bugun endi sal-pal code yozish boshlasak ham bo'ladi, har qalay o'tgan gal hamma narsani to'g'irlab olgan edik-a?) Endi gap qisqasi bunday, hozir kimdir shu postlarni ubu biron joylaridan olib tashab yuborishi mumkin boshqalarga, agar shu odam kelib hozir hech narsani tushunmasa, undanda achinarli ahvol bo'lishi mumkin emas. Shunga bundan keyin bir kichik ogohlantirish yozib ketaman keyingi postlardan, bilmaganlar boshidan kelishi uchun. 
+As-salo-mu, a-ley-ko'm! Qani darsimizni yana bugun boshlaymiz. Bugun endi sal-pal kod yozish boshlasak ham bo'ladi, har qalay o'tgan gal hamma narsani to'g'irlab olgan edik-a?) Endi gap qisqasi bunday, hozir kimdir shu postlarni ubu biron joylaridan olib tashlab yuborishi mumkin boshqalarga, agar shu odam kelib hozir hech narsani tushunmasa, undanda achinarli ahvol bo'lishi mumkin emas. Shunga bundan keyin bir kichik ogohlantirish yozib ketaman keyingi postlardan, bilmaganlar boshidan kelishi uchun. 
 
 **Ogohlantiruv:** Agar siz bu yerda nimalar bo'layotganini butunlay tushunmayotgan bo'lsangiz, iltimos bu sarguzashtlarimizni [boshidan o'qib chiqishni](/lang-part-1) maslahat beraman!
 
-Loyihada bizda hozir main.c bor va uni qiladigan asosiy vazifasi bu ekranda `Salom Dunyo!` chiqarish holos. Agar siz zamonaviy dinamik dasturlash tillaridan kelayotgan bo'lsangiz, sizni oldinda judayam ko'p teoriyaviy fikrlash kutayotganini bilan ogohlantirmoqchiman. Agar C da yozgan va tajribangiz bo'lsa, nima deyayotganimni tushunib turibsiz.
+Loyihada bizda hozir `main.c` bor va uni qiladigan asosiy vazifasi bu ekranda `Salom Dunyo!` chiqarish holos. Agar siz zamonaviy dinamik dasturlash tillaridan kelayotgan bo'lsangiz, sizni oldinda judayam ko'p nazariy fikrlash kutayotganini bilan ogohlantirmoqchiman. Agar C da yozgan va tajribangiz bo'lsa, nima deyayotganimni tushunib turibsiz.
 
 > Xo'sh, bu bilan nima demoqchiman?
 
-Gap shundaki, C va shunga o'xshash dasturlash tillarida siz har doim ham natijani ko'rolmaysiz python yoki javascript tillariga kabi, ba'zan teoriya orqali fikrlash yordamida dastur yozib ketishingizga to'g'ri keladi. Har doim ham orqada bo'layotgan protsessni ko'ra ololmaysiz, uni ham teoriya shaklida fikrlash doirasida yozib borishga to'g'ri keladi. Agar hali ham nima deyayotganimni tushunmayotgan bo'lsangiz, praktika qilib borish doirasida tushunib olasiz kelayotgan yaqin kelajakda. Hozircha bu narsani taxminan joyida texnik topshiriqlarsiz arxitektura yoki butun infrastrukturani hayolda chizish va yozib ketish deb tasavvur qilsangiz bo'ladi.
+Gap shundaki, C va shunga o'xshash dasturlash tillarida siz har doim ham natijani ko'rolmaysiz python yoki javascript tillariga kabi, ba'zan nazariya orqali fikrlash yordamida dastur yozib ketishingizga to'g'ri keladi. Har doim ham orqada bo'layotgan protsessni ko'ra ololmaysiz, uni ham nazariya shaklida fikrlash doirasida yozib borishga to'g'ri keladi. Agar hali ham nima deyayotganimni tushunmayotgan bo'lsangiz, praktika qilib borish doirasida tushunib olasiz kelayotgan yaqin kelajakda. Hozircha bu narsani taxminan joyida texnik topshiriqlarsiz arxitektura yoki butun infrastrukturani hayolda chizish va yozib ketish deb tasavvur qilsangiz bo'ladi.
 
 ### O'zimiz yoqtirgan redaktorni loyiha ichida ochvolamiz va qani ketdik...
 
@@ -29,7 +29,7 @@ Boshlanishiga `src/` papkani ni ichida `compiler.c` degan fayl yaratib, ichini o
 
 ```c
 int compile_file(const char* filename, const char* out_filename, int flags)
-{
+{   
     return 0;
 }
 ```
@@ -71,7 +71,7 @@ struct compile_process* compile_process_create(const char* filename, const char*
 }
 ```
 
-bu funksiya va funksiyamiz compile_process struct (kelilar shu struct yoki strukturani ni ko'proq obyekt, yoki quti deb tasavvur qilamiz, uni ichiga narsa qo'yamiz va kerakli payt ichidan olib ishlatamiz. ko'proq ma'lumotlarni tartibli saqlash uchun ishlatamiz. faqat oop chilar diqqatiga, bu obyektda metod yozolmaymiz, faqat statelar) pointeri qaytaradi. Endi esa shu funksiyani tepasidan bir narsa yozib ketaylik:
+bu funksiya va funksiyamiz compile_process struct (kelilar shu struct yoki strukturani ko'proq obyekt, yoki quti deb tasavvur qilamiz, uni ichiga narsa qo'yamiz va kerakli payt ichidan olib ishlatamiz. ko'proq ma'lumotlarni tartibli saqlash uchun ishlatamiz. faqat oop chilar diqqatiga, bu obyektda metod yozolmaymiz, faqat statelar) pointeri qaytaradi. Endi esa shu funksiyani tepasidan bir narsa yozib ketaylik:
 
 ```c
 #include <stdio.h>
@@ -129,7 +129,7 @@ Endi esa biz kompilyatorimiz uchun anniq protsess yaratamiz. Buning uchun:
 struct compile_process* process = calloc(1, sizeof(struct compile_process))
 ```
 
-faqat esda tutamiz, calloq bu standard kutubxonadan olingan yordamchi funksiya, shuning uchun tepaga bir boya yozgan stdio mizni tagidan stdlib qo'shib qo'yamiz. Agar nima deganimni tushunmayotgan bo'lsangiz, boyagi `#include <stdio.h>` ni tagidan `#include <stdlib.h>` ni yozib qo'ying. Undan keyin esa shu stdlib yana tagida `#include "../includes/compiler.h"` yozib qo'yasiz, chunki callocga biz `compiler.h` da yozilgan `compile_process` structini oshirayabmiz. Shunda calloc va compile_process structi qayerdan kelayotganini C kompilyatorimiz biladi. Hamda, e'tibor bergan bo'lsangiz, calloq o'ziniz ichida 2 ta argument olayabdi, birinchis bu 1 ya'ni a'zolar soni, shuncha element uchun joy ajratiladi va ikkinchisi bu ajratilishi kerak bo'lgan element hajmi, biz compile_process uchun yetadigan joy ajratayabmiz. Joy ajratilish va o'sishi dinamik tarzda kechadi. Agar OOP chilar bo'lsa, ularga oddiygina obyekt initsializatsiya qildik desak bo'ladi, faqat xotira chegaralangan. Endi esa bizni `compiler.h` ichida bo'm-bo'sh yotgan `compile_process` structimizga ma'lumotlar joylashtirish uchun qanday joylashtirilishi uchun ma'lumotlar berib chiqamiz. 
+faqat esda tutamiz, calloc bu standard kutubxonadan olingan yordamchi funksiya, shuning uchun tepaga bir boya yozgan stdio mizni tagidan stdlib qo'shib qo'yamiz. Agar nima deganimni tushunmayotgan bo'lsangiz, boyagi `#include <stdio.h>` ni tagidan `#include <stdlib.h>` ni yozib qo'ying. Undan keyin esa shu stdlib yana tagida `#include "../includes/compiler.h"` yozib qo'yasiz, chunki callocga biz `compiler.h` da yozilgan `compile_process` structini oshirayabmiz. Shunda calloc va compile_process structi qayerdan kelayotganini C kompilyatorimiz biladi. Hamda, e'tibor bergan bo'lsangiz, calloc o'ziniz ichida 2 ta argument olayabdi, birinchis bu 1 ya'ni a'zolar soni, shuncha element uchun joy ajratiladi va ikkinchisi bu ajratilishi kerak bo'lgan element hajmi, biz compile_process uchun yetadigan joy ajratayabmiz. Joy ajratilish va o'sishi dinamik tarzda kechadi. Agar OOP chilar bo'lsa, ularga oddiygina obyekt initsializatsiya qildik desak bo'ladi, faqat xotira chegaralangan. Endi esa bizni `compiler.h` ichida bo'm-bo'sh yotgan `compile_process` structimizga ma'lumotlar joylashtirish uchun qanday joylashtirilishi uchun ma'lumotlar berib chiqamiz. 
 
 ```c
 // FILE* ishlatganimiz uchun teparoqda yozib ketamiz
@@ -174,7 +174,7 @@ Shakl berib chiqgach, endi boyagi protsessda shu shakl ichiga ma'lumotlarni joyl
     process->ofile = out_file;
 ```
 
-Mazzami sizlarga a?) Vo'y vo'yeeey, endi shu protsessni boshqa funksiyalarda ishlatish uchun shunday pasidan qaytarib qo'yaimz!
+Mazzami sizlarga a?) Vo'y vo'yeeey, endi shu protsessni boshqa funksiyalarda ishlatish uchun shunday pasidan qaytarib qo'yamiz!
 
 ```c
   return process;
@@ -229,7 +229,7 @@ Endi esa `compiler.c` da boshlagan ishimizni tugatib qo'yamiz.
 
     // TODO: Parsing qilish kerak bu yerda
 
-    // TODO: Code generatsiya qilish kerak bu yerda
+    // TODO: kod generatsiya qilish kerak bu yerda
 
     // Ureee! Muvaffaqiyatli ishini
     // bajardi kompilyatorimiz
@@ -305,7 +305,7 @@ Mana bizni bugungi sarguzashtlarimiz oxiriga yetay deb qoldi. Faqat endi shuncha
     return 0;
 ```
 
-Biz bilamizki dasturimiz ishga tushgandan birdaniga test papkasini ichidan simple.c degan fayl axtarish boshlaydi. Biz lekin bu narsalar yaratmagan edi, shunga endi `test` degan papka yaratib ichida `simple.c` degan fayl ochib qo'yamiz va shu fayl ichida oddiygina Salom, Dunyo! tashab qo'yamiz:
+Biz bilamizki dasturimiz ishga tushgandan birdaniga test papkasini ichidan simple.c degan fayl axtarish boshlaydi. Biz lekin bu narsalar yaratmagan edi, shunga endi `test` degan papka yaratib ichida `simple.c` degan fayl ochib qo'yamiz va shu fayl ichida oddiygina Salom, Dunyo! tashlab qo'yamiz:
 
 ```c
 int main()
@@ -314,6 +314,6 @@ int main()
 }
 ```
 
-Tamom vassalom. Endi esa dastur ishga tushuramiz. Bunisi endi men aytmayman, har xolda eslasalaringiz kerak o'tgan safar qanday kompilyatsiya qilganlaringizni hay? Ishga tushurib ko'ring va agar hammasi o'xshagan bo'lsa `Hamma narsa muvaffaqiyatli kompilyatsiya qilindi` habarini ko'rsatishi kerak, bo'lmasam o'tirib bir code review qilasizlar ;)
+Tamom vassalom. Endi esa dastur ishga tushuramiz. Bunisi endi men aytmayman, har xolda eslasalaringiz kerak o'tgan safar qanday kompilyatsiya qilganlaringizni hay? Ishga tushurib ko'ring va agar hammasi o'xshagan bo'lsa `Hamma narsa muvaffaqiyatli kompilyatsiya qilindi` habarini ko'rsatishi kerak, bo'lmasam o'tirib bir kod review qilasizlar ;)
 
-Endi bir gap, men har doim ham bu yerda codelarni chiroyli va to'g'ri yozib ketmasligim mumkin, ham sizlar ham o'zlaringiz sal-pal izlanishlaringiz kerak, bo'lmasa o'smaysizlar, chin so'zim. Shunga tutoriallar tugagandan keyin sal o'tirib [NyanSystems/nya](https://github.com/NyanSystems/nya) dagi kodlardan qarab, xato kamchiliglarni to'ldirib olasizlar. Men sizlarga har tutorialda yozilgan paytgi commitlar linkini tashab ketishim mumkin endi oldinga jaa o'tib ketib  umumman o'zgarib ketgan code ko'rmasligilar uchun. Mana bugungi tutorial o'zi [[9f0386 kommit]](https://github.com/NyanSystems/nya/tree/9f0386f760ad07fbdde51522f9261f89eb01b397) ga asoslangan. Ozgina qo'shimchalari bor, uni keyingi tutorialdan qamrab olishga harakat qilaman!
+Endi bir gap, men har doim ham bu yerda kodlarni chiroyli va to'g'ri yozib ketmasligim mumkin, ham sizlar ham o'zlaringiz sal-pal izlanishlaringiz kerak, bo'lmasa o'smaysizlar, chin so'zim. Shunga tutoriallar tugagandan keyin sal o'tirib [NyanSystems/nya](https://github.com/NyanSystems/nya) dagi kodlardan qarab, xato kamchiliglarni to'ldirib olasizlar. Men sizlarga har tutorialda yozilgan paytgi commitlar linkini tashlab ketishim mumkin endi oldinga jaa o'tib ketib  umumman o'zgarib ketgan kod ko'rmasligilar uchun. Mana bugungi tutorial o'zi [[9f0386 kommit]](https://github.com/NyanSystems/nya/tree/9f0386f760ad07fbdde51522f9261f89eb01b397) ga asoslangan. Ozgina qo'shimchalari bor, uni keyingi tutorialdan qamrab olishga harakat qilaman!
