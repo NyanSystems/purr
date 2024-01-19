@@ -18,6 +18,7 @@ taxonomies = [
 
 [extra]
 main_url = "https://nyan.uz"
+edit_url = "https://github.com/NyanSystems/purr/tree/main/content"
 author = "Nyan Developers (LTC)"
 year = "2024"
 keywords = "nyan, nyancat, nya, compiler, developer"
