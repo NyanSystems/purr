@@ -92,7 +92,7 @@ main {
 }
 
 .gsc-main {
-  /* make any text use DOS font */
+  padding-bottom: 10px;
   font-family: 'DOS', monospace;
 }
 
