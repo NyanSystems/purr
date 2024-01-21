@@ -1,5 +1,4 @@
 base_url = "https://blog.nyan.uz"
-# theme = "zola.386"
 
 # default_language = "en"
 title = "Nyan Systems"
@@ -11,11 +10,11 @@ generate_rss = true
 build_search_index = true
 
 taxonomies = [
-  {name="categories", rss=true},
-  {name="tags", rss=true},
+    { name = "categories", rss = true },
+    { name = "tags", rss = true },
 ]
 
-
+### EXTA CONFIGS
 [extra]
 main_url = "https://nyan.uz"
 edit_url = "https://github.com/NyanSystems/purr/tree/main/content"
@@ -23,16 +22,13 @@ author = "Nyan Developers (LTC)"
 year = "2024"
 keywords = "nyan, nyancat, nya, compiler, developer"
 theme_color = "#003366"
+comments = true
 zola386_menu = [
-  {path="", name="Asosiy"},
-  {path="categories", name="Kategoriyalar"},
-  {path="tags", name="Teglar"},
-  {path="about", name="Biz haqimizda"},
+    { path = "", name = "Asosiy" },
+    { path = "categories", name = "Kategoriyalar" },
+    { path = "tags", name = "Teglar" },
+    { path = "about", name = "Biz haqimizda" },
 ]
-
-### THIRD PARTY
-# google_analytics = "UA-012345-67"
-# disqus = "disqus-user"
 
 ### SOCIAL MEDIA
 image = "https://raw.githubusercontent.com/lopes/zola.386/master/screenshot.png"
