@@ -83,9 +83,17 @@ main {
   --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-8);
 }
 
-.gsc-comments {
+@font-face {
+  font-family: 'DOS';
+  font-style: normal;
+  font-weight: normal;
+  src: url('fonts/Fixedsys500c.eot');
+  src: local('☺'), url('fonts/Fixedsys500c.woff') format('woff'), url('fonts/Fixedsys500c.ttf') format('truetype'), url('fonts/Fixedsys500c.svg') format('svg');
+}
+
+.gsc-main {
   /* make any text use DOS font */
-  font-family: "DOS", monospace;
+  font-family: 'DOS', monospace;
 }
 
 .gsc-homepage-bg {
