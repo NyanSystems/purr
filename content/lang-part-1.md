@@ -51,22 +51,22 @@ project(nya C)
 deb yozvoramiz. Bunda loyiha nomi va u qaysi til ishlatishini ko’rsatamiz. CMake C++ loyihalarda ham ishlatiladi, shunga ko’rsatib ketish kerak bo’ladi. Keyin pasidan
 
 ```cmake
-include_directories(./includes ./helpers)
+include_directories(./include ./helpers)
 ```
 
-yozish orqali qayerdan header fayllarni topishni tushuntiramiz va ketidan tezgina “includes” va “helpers” degan papkachalarni yaratib qo’yamiz loyiha turgan joydan (project root path deymiz inglizchada). Undanam pasidan
+yozish orqali qayerdan header fayllarni topishni tushuntiramiz va ketidan tezgina “include” va “helpers” degan papkachalarni yaratib qo’yamiz loyiha turgan joydan (project root path deymiz inglizchada). Undanam pasidan
 
 ```cmake
 set(CMAKE_C_STANDARD 23)
 ```
 
-tiqishtiramiz. Bu esa nechinchi avlod standartizatsiyasini ishlatish belgilab beradi. Masalan C99 bor, C++11 bor, C++14, 23 va hokazo. Har bir evolyutsiya nimadir yangi narsa olib kiradi (ammo nimagadir C++ da har yangi evolyutsiya bilan omilashaveradi… ha-ha, hazil). Biz eng yangi C ishlatamiz (xotya 99 ishlatdik nima, 23 ishlatdik nima… ha-ha). Endi esa fayllarimiz haqida CMake ga tushuntirib beramiz. Men tartibli perfeksionistman, hamma narsani chiroyli va tartibda qilib borishni yoqitraman. Odamlar hamma narsani proyekt boshida saqlashsa, men header fayllarni “includes” papkasida, C kodlarni “src” va qo’shimcha yordamchi codebaselarni “helpers” da… Shunga, endi CMake ga
+tiqishtiramiz. Bu esa nechinchi avlod standartizatsiyasini ishlatish belgilab beradi. Masalan C99 bor, C++11 bor, C++14, 23 va hokazo. Har bir evolyutsiya nimadir yangi narsa olib kiradi (ammo nimagadir C++ da har yangi evolyutsiya bilan omilashaveradi… ha-ha, hazil). Biz eng yangi C ishlatamiz (xotya 99 ishlatdik nima, 23 ishlatdik nima… ha-ha). Endi esa fayllarimiz haqida CMake ga tushuntirib beramiz. Men tartibli perfeksionistman, hamma narsani chiroyli va tartibda qilib borishni yoqitraman. Odamlar hamma narsani proyekt boshida saqlashsa, men header fayllarni “include” papkasida, C kodlarni “src” va qo’shimcha yordamchi codebaselarni “helpers” da… Shunga, endi CMake ga
 
 ```cmake
-file(GLOB nyan_SRC CONFIGURE_DEPENDS "includes/*.h" "src/*.c" "helpers/*.c" "helpers/*.h")
+file(GLOB nyan_SRC CONFIGURE_DEPENDS "include/*.h" "src/*.c" "helpers/*.c" "helpers/*.h")
 ```
 
-yozish bilan biz, shu papkalar ichidan nimalar axtarish tushuntirib beramiz. Adashmasam, helpers va includes yaratuvdik, endi src papkasini ham yaratib qo’yamiz va olg’a. Keyin,
+yozish bilan biz, shu papkalar ichidan nimalar axtarish tushuntirib beramiz. Adashmasam, helpers va include yaratuvdik, endi src papkasini ham yaratib qo’yamiz va olg’a. Keyin,
 
 ```cmake
 add_executable(nya ${nyan_SRC})
@@ -84,10 +84,10 @@ Haa GNU chilar, tayyormisizlar?) Tayyor turilar, hozir yaxshigina itarilamiz… 
 
 ```makefile
 OBJECTS=
-INCLUDES= -I./includes -I./helpers
+INCLUDES= -I./include -I./helpers
 ```
 
-deb, tashab qo’yamiz va “includes” bilan “helpers” degan papkalarni yaratib qo’yamiz. Sal keyinroq tushuntirib beraman OBJECTS nimaga kerakligini, INCLUDES esa biz gcc ga qayerdan header fayllarni topish kerakliligini aytayabmiz. Keyin esa pasidan (qo’shimcha bir qator tashab agar malol kelmasa):
+deb, tashab qo’yamiz va “include” bilan “helpers” degan papkalarni yaratib qo’yamiz. Sal keyinroq tushuntirib beraman OBJECTS nimaga kerakligini, INCLUDES esa biz gcc ga qayerdan header fayllarni topish kerakliligini aytayabmiz. Keyin esa pasidan (qo’shimcha bir qator tashab agar malol kelmasa):
 
 ```makefile
 all: ${OBJECTS}

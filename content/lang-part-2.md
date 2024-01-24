@@ -34,7 +34,7 @@ int compile_file(const char* filename, const char* out_filename, int flags)
 }
 ```
 
-funksiya o'ziga `filename` (kompilyatsiya qilinishi kerak bo'lgan fayl nomi), `out_filename` (kompilyatsiya bo'lgan dastur qanday va qayerda saqlanishi kerak) va `flags` (kompilyatsiya jarayoni uchun qo'shimcha ko'rsatkichlar) argumentlarini qabul qiladi. Funksiya `hozirchalikga` '0' qaytarib turadi (0 bu pastki darajali dasturlash terminidan ko'pincha ish muvaffaqiyatli bajarildi degan manoda ishlatiladi, 1 bo'lsa xatolik yuz berdi degan bo'ladi), hali keyinchalik bu yerga yana ko'p qaytib kelamiz. Endi esa shu faylimiz uchun header fayl yaratib olamiz. Headerlar turishi uchun biz alohida joy ochganmiz va bu `includes` papkasi. Shu papkani ichida `compiler.h` degan fayl yaratamiz va ichida:
+funksiya o'ziga `filename` (kompilyatsiya qilinishi kerak bo'lgan fayl nomi), `out_filename` (kompilyatsiya bo'lgan dastur qanday va qayerda saqlanishi kerak) va `flags` (kompilyatsiya jarayoni uchun qo'shimcha ko'rsatkichlar) argumentlarini qabul qiladi. Funksiya `hozirchalikga` '0' qaytarib turadi (0 bu pastki darajali dasturlash terminidan ko'pincha ish muvaffaqiyatli bajarildi degan manoda ishlatiladi, 1 bo'lsa xatolik yuz berdi degan bo'ladi), hali keyinchalik bu yerga yana ko'p qaytib kelamiz. Endi esa shu faylimiz uchun header fayl yaratib olamiz. Headerlar turishi uchun biz alohida joy ochganmiz va bu `include` papkasi. Shu papkani ichida `compiler.h` degan fayl yaratamiz va ichida:
 
 ```c
 #ifndef NYA_COMPILER_H
@@ -129,7 +129,7 @@ Endi esa biz kompilyatorimiz uchun anniq protsess yaratamiz. Buning uchun:
 struct compile_process* process = calloc(1, sizeof(struct compile_process))
 ```
 
-faqat esda tutamiz, calloc bu standard kutubxonadan olingan yordamchi funksiya, shuning uchun tepaga bir boya yozgan stdio mizni tagidan stdlib qo'shib qo'yamiz. Agar nima deganimni tushunmayotgan bo'lsangiz, boyagi `#include <stdio.h>` ni tagidan `#include <stdlib.h>` ni yozib qo'ying. Undan keyin esa shu stdlib yana tagida `#include "../includes/compiler.h"` yozib qo'yasiz, chunki callocga biz `compiler.h` da yozilgan `compile_process` structini oshirayabmiz. Shunda calloc va compile_process structi qayerdan kelayotganini C kompilyatorimiz biladi. Hamda, e'tibor bergan bo'lsangiz, calloc o'ziniz ichida 2 ta argument olayabdi, birinchis bu 1 ya'ni a'zolar soni, shuncha element uchun joy ajratiladi va ikkinchisi bu ajratilishi kerak bo'lgan element hajmi, biz compile_process uchun yetadigan joy ajratayabmiz. Joy ajratilish va o'sishi dinamik tarzda kechadi. Agar OOP chilar bo'lsa, ularga oddiygina obyekt initsializatsiya qildik desak bo'ladi, faqat xotira chegaralangan. Endi esa bizni `compiler.h` ichida bo'm-bo'sh yotgan `compile_process` structimizga ma'lumotlar joylashtirish uchun qanday joylashtirilishi uchun ma'lumotlar berib chiqamiz. 
+faqat esda tutamiz, calloc bu standard kutubxonadan olingan yordamchi funksiya, shuning uchun tepaga bir boya yozgan stdio mizni tagidan stdlib qo'shib qo'yamiz. Agar nima deganimni tushunmayotgan bo'lsangiz, boyagi `#include <stdio.h>` ni tagidan `#include <stdlib.h>` ni yozib qo'ying. Undan keyin esa shu stdlib yana tagida `#include "../include/compiler.h"` yozib qo'yasiz, chunki callocga biz `compiler.h` da yozilgan `compile_process` structini oshirayabmiz. Shunda calloc va compile_process structi qayerdan kelayotganini C kompilyatorimiz biladi. Hamda, e'tibor bergan bo'lsangiz, calloc o'ziniz ichida 2 ta argument olayabdi, birinchis bu 1 ya'ni a'zolar soni, shuncha element uchun joy ajratiladi va ikkinchisi bu ajratilishi kerak bo'lgan element hajmi, biz compile_process uchun yetadigan joy ajratayabmiz. Joy ajratilish va o'sishi dinamik tarzda kechadi. Agar OOP chilar bo'lsa, ularga oddiygina obyekt initsializatsiya qildik desak bo'ladi, faqat xotira chegaralangan. Endi esa bizni `compiler.h` ichida bo'm-bo'sh yotgan `compile_process` structimizga ma'lumotlar joylashtirish uchun qanday joylashtirilishi uchun ma'lumotlar berib chiqamiz. 
 
 ```c
 // FILE* ishlatganimiz uchun teparoqda yozib ketamiz
@@ -194,7 +194,7 @@ Miyacha qizib ketdi-ya?) Endi eee bir eslaringizda bo'lsa, `compiler.c` degan fa
   struct compile_process* process = compile_process_create(filename, out_filename, flags);
 ```
 
-`compile_process_create` bilan `compile_process` ga qizil yonadi redaktorimizda, chunki tepada biz bu narsalar `compiler.h` dan kelayotganini aytmaganmiz. Tezda eng tepada `#include "../includes/compiler.h"` deb yozib qo'yamiz. Kodimizga qaytadigan bo'lsak, biz bu yerda protsess yaratish funksiyamiz yordamida protsess yaratdik. Bilamizki, agar biron xatolik yuz bersa `compile_process_create` ichida, albatta NULL qaytaradi. Shuning uchun NULL mi yoki yo'qligiga validatsiya qilishni boshlaymiz:
+`compile_process_create` bilan `compile_process` ga qizil yonadi redaktorimizda, chunki tepada biz bu narsalar `compiler.h` dan kelayotganini aytmaganmiz. Tezda eng tepada `#include "../include/compiler.h"` deb yozib qo'yamiz. Kodimizga qaytadigan bo'lsak, biz bu yerda protsess yaratish funksiyamiz yordamida protsess yaratdik. Bilamizki, agar biron xatolik yuz bersa `compile_process_create` ichida, albatta NULL qaytaradi. Shuning uchun NULL mi yoki yo'qligiga validatsiya qilishni boshlaymiz:
 
 ```c
     if (!process)
@@ -279,7 +279,7 @@ Mana bizni bugungi sarguzashtlarimiz oxiriga yetay deb qoldi. Faqat endi shuncha
 
 ```c
     // Asosiy kompilyatsiya qilish funksiyamiz ishga tushuramiz
-    // Faqat tepada "../includes/compiler.h" include qilish esdan
+    // Faqat tepada "../include/compiler.h" include qilish esdan
     // chiqmasin!
     int res = compile_file("./test/simple.c", "./test/simple", 0);
 
