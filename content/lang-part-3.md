@@ -13,17 +13,17 @@ tags = ["nya", "kutubxonalar", "vektor", "bufer"]
 comments = true
 +++
 
-Ancha vaqt o’tib ketibdi oxirgi postni yozganimizdan bera. Katta tanaffus bo’lishiga asosan C dasturlash tilidagi yo’q kerakli kutubxonalar yozib olishimiz sababchi bo’ldi. Endi esa bir yugurib hammasini o’tib chiqamiz hozir.
+Oxirgi postni yozganimizdan beri ancha vaqt o’tibdi. Katta tanaffus bo’lishiga asosan C dasturlash tilidagi yo’q kerakli kutubxonalar yozib olishimiz sababchi bo’ldi. Endi esa bir yugurib hammasini o’tib chiqamiz hozir.
 
 **Ogohlantiruv:** Agar siz bu yerda nimalar bo'layotganini butunlay tushunmayotgan bo'lsangiz, iltimos bu sarguzashtlarimizni [boshidan o'qib chiqishni](/lang-part-1) maslahat beraman!
 
-Oxirgi martasida biz tasavvur qilgan ko'rinishda kompilyator boshlang'ich arxitekturasini tuzib chuquvdik. Endi esa, bizga oldindan kerakli bo'lgan yordamchi kutubxonalar yozib olamiz. 
+Oxirgi maqolada biz tasavvur qilgan kompilyatorning boshlang'ich arxitekturasini tuzib chiqgan edik. Endi esa, bizga oldindan kerakli bo'lgan yordamchi kutubxonalar yozib olamiz. 
 
 - Kutubxona? 
 - Nimaga? 
 - Aynan hozirmi?
 
-**Ha!** Aynan hozir vaqti shu narsani. C da ko'plab abstraksiyalar mavjud emas, masalan HashMap, Vektor yoki Buferlar. Bularni hammasini C da o'zimiz qo'lda yozib chiqishimiz to'g'ri keladi. C da hech narsa yo'qligi eslaringizdan chiqmadi degan umiddaman ;) Keyinchalik shu narsalar bilan yana chalg'ish xohlamaymiz, shunga hozir yozib tashaganimiz ma'qul. Shu yerda biz endi nega 3-qism shuncha vaqt olganini birdaniga tushuntirib o'tamiz, bir taraflama sizlar tajribangiz uchun foydali bo'ladi degan umiddaman. Xullas, kutubxonani agar istasak alohida repozitoriyaga olishimiz mumkin, lekin birdaniga ichida shundayiga yozib ketsak ham bo'lar edi. Ajratib boshqa repozitoriyaga chiqarsak kodimizda faqat kompilyatorga tegishli logikalar qolardi va tozaroq turar edi. Chiqarmasak ham qo'rqinchli tarafi yo'q, hammasini helpers ichiga tiqib ketaveramiz. Bizda bo'lgan muammo (ha, biz ham sizlar bilan birga yozib borayabmiz bu narsani, faqat bizda ozgina shu narsa ustida tajribamiz bor), C bilan kutubxona yozib, uni CMake orqali Nix paket menejeri yordamida boshqa proyektda ishlatish bizning holatimizda ozgina og'riqli kechdi. 
+**Ha!** Aynan hozir vaqti shu narsani. C da ko'plab abstraksiyalar mavjud emas, masalan HashMap, Vektor yoki Buferlar. Bularni hammasini C da o'zimiz qo'lda yozib chiqishimiz to'g'ri keladi. C da hech narsa yo'qligi eslaringizdan chiqmadi degan umiddaman ;) Keyinchalik shu narsalar bilan yana chalg'ishni xohlamaymiz, shunga hozir yozib tashaganimiz ma'qul. Shu yerda biz endi nega 3-qism shuncha vaqt olganini birdaniga tushuntirib o'tamiz, bir taraflama sizlar tajribangiz uchun foydali bo'ladi degan umiddaman. Xullas, kutubxonani agar istasak alohida repozitoriyaga olishimiz mumkin, lekin birdaniga ichida shundayiga yozib ketsak ham bo'lar edi. Ajratib boshqa repozitoriyaga chiqarsak kodimizda faqat kompilyatorga tegishli logika qolardi va tozaroq turar edi. Chiqarmasak ham qo'rqinchli tarafi yo'q, hammasini helpers ichiga tiqib ketaveramiz. Bizda bo'lgan muammo (ha, biz ham sizlar bilan birga yozib borayabmiz bu narsani, faqat bizda ozgina shu narsa ustida tajribamiz bor), C bilan kutubxona yozib, uni CMake orqali Nix paket menejeri yordamida boshqa proyektda ishlatish bizning holatimizda ozgina og'riqli kechdi. 
 
 Kutubxonalar ikki xil rejimda kompilyatsiya qilish mumkin, biri "Statik" bo'lsa, ikkinchisi "Shared". Orasidagi farq esa, "Shared" dagi kutubxonalarni C da yozilgan dastur kompilyatsiya bo'lib, ishga tushurilgandan keyin axtarib topib, ichidagi kerakli funksiya yoki datalardan foydalanadi. "Statik" da bo'lsa, C da yozilgan dasturimiz Statik kutubxonada kompilyatsiya bo'lish vaqti hamma narsani shu kompilyatsiya bo'layotgan dasturimiz ichiga tiqib ketadi, shunda har safar ishga tushurganda kutubxona axtarmasdan o'zini ichidan olib ishlataveradi kutubxonadagi kerakli narsalarni.
 
@@ -36,7 +36,7 @@ Biz statik paket chiqarib, uni Nix da boshqa nix paketga ulash bizni holatimizda
 - vector.h
 - vector.c
 
-Ho'sh, men hozir endi 1000 dan oshiq liniya kodni hammasini sizlarga birma-bir tushuntirib chaynab bera olmayman ming afsuski, shunga o'tirib yana o'zlaringiz izlanishlaringizga to'g'ri keladi keyingi postgacha. Ammo, ushbu protsess sizlarga yanada oson qilish uchun, [Ixtiyorjon](https://github.com/iabdukhoshimov) nomli safdoshimiz hozirda hamma header fayllarda nima funksiya nimaga kerakliligi haqida batafsil kod ni ichida dokumentatsiya yozib bormoqda va bu yozishmalar .h fayllardan topsangiz bo'ladi. Logikalar esa, o'zingiz tushunib turganlaringizday .c fayllar ichida. O'zgarishlarni [main branch](https://github.com/NyanSystems/nya)ida kuzatib borishingiz mumkin.  
+Ho'sh, men hozir endi 1000 dan oshiq qator kodni hammasini sizlarga birma-bir tushuntirib chaynab bera olmayman ming afsuski, shunga o'tirib yana o'zlaringiz izlanishlaringizga to'g'ri keladi keyingi postgacha. Ammo, ushbu protsess sizlarga yanada oson qilish uchun, [Ixtiyorjon](https://github.com/iabdukhoshimov) nomli safdoshimiz hozirda hamma header fayllarda nima funksiya nimaga kerakliligi haqida batafsil kod ni ichida dokumentatsiya yozib bormoqda va bu yozishmalar .h fayllardan topsangiz bo'ladi. Logikalar esa, o'zingiz tushunib turganlaringizday .c fayllar ichida. O'zgarishlarni [main branch](https://github.com/NyanSystems/nya)ida kuzatib borishingiz mumkin.  
 
 > Ho'p, hozir biz endi nima qilaylik? 
 
