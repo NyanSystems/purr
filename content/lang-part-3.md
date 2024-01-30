@@ -77,7 +77,7 @@ OBJECTS= ./build/compiler.o ./build/cprocess.o ./build/helpers/buffer.o ./build/
 
 E'tibor bergan bo'lsalaringiz, `./build/helpers` deganmiz, ha, agar men o'ylayotgan narsani o'ylayotgan bo'lsangiz yanglishmadingiz! `build` papkasini ichida yana `helpers` degan papka yaratishimiz ham kerak bo'ladi. Demak, yaratdik, tushuntirdik, endi kompilyatsiya qilib ko'rishimiz kerak bo'ladi. Ammo, yozgan kutubxonalarimizni ham ishlatib ko'rgimiz keladi.
 
-Endi bunday qilamiz, agar siz kutubxonalar endi yozish boshlagan bo'lsangiz, shunday hozir bir kompilyatsiya qilib ko'ravering, agar ko'chirib o'tkazib yoki oxirigacha yozib chiqsangiz, keyin `main.c` ichida asosiy `main` funksiyani ichida shu narsani tepadan yozvoramiz shunday qilib: 
+Endi bunday qilamiz, agar siz kutubxonalar endi yozish boshlagan bo'lsangiz, shunday hozir bir kompilyatsiya qilib ko'ravering, o'xshasa demak Makefile yoki CMake to'g'ri sozlaganmiz, agar ko'chirib o'tkazib yoki oxirigacha yozib chiqsangiz, keyin `main.c` ichida asosiy `main` funksiyani ichida shu narsani tepadan yozvoramiz shunday qilib: 
 
 ```c
 int main()
@@ -108,7 +108,7 @@ int main()
 }
 ```
 
-Bu orqali biz yozgan vektorlar kutubxonamizni sinab ko'ramiz va agar miyangizda ushbu kodni ishga tushurgan bo'lsangiz, natija oldindan 50 ligini bilasiz =) Qanday qilib kompilyatsiya qilib ishga tushurish eslatishim shart emas, a?) Ho'sh, ishga tushurib ko'rsak, terminalda shunga o'xshash natija ko'rsatishi kerak:
+Bu orqali biz yozgan vektorlar kutubxonamizni sinab ko'ramiz va agar miyangizda ushbu kodni ishga tushurgan bo'lsangiz, natija oldindan `50` ligini bilasiz =) Qanday qilib kompilyatsiya qilib ishga tushurish eslatishim shart emas, a?) Ho'sh, ishga tushurib ko'rsak, terminalda shunga o'xshash natija ko'rsatishi kerak:
 
 ```
 50
