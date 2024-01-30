@@ -2,7 +2,7 @@
 title = "Kerakli qo'shimchalar (3-qism)"
 description = "Tilni yozish uchun kerakli bo'lgan kutubxonalar oldindan yaratib olamiz."
 date = 2024-01-30
-draft = false
+draft = true
 slug = "lang-part-3"
 
 [taxonomies]
