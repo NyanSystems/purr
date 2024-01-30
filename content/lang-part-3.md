@@ -85,18 +85,35 @@ int main()
   // ==============================================
   // Vektorlarni sinab ko'rish uchun yozilgan kod
   // ==============================================
+
+  // Vektor yaratamiz
   struct vector *vec = vector_create(sizeof(int));
 
+  // Bitta x nomli joy
   int x = 50;
-  vector_push(vec, &x);
-  x = 20;
+
+  // x ni vektorimizga itaramiz
   vector_push(vec, &x);
 
+  // Endi x imiz 20 ga teng
+  x = 20;
+
+  // x qiymatini yana vektorimizga itaramiz
+  // Endi vektorimizda 2 ta qiymat bor
+  vector_push(vec, &x);
+
+  // Eng oxirgi qo'shilgan qiymat olib tashaymiz
   vector_pop(vec);
 
+  // Vektor 0 indeksidagi qiymatga kuzatma osamiz
   vector_set_peek_pointer(vec, 0);
+
+  // Boyagi kuzatmadan pointer (ko'rsatma) ulab 
+  // olamiz qiymat chiqarib olaverish uchun
   int *ptr = vector_peek(vec);
 
+  // Kuzatmadan qiymat siqib chiqarilmaguncha
+  // kuzatib boraveramiz
   while (ptr) {
     printf("%i\n", *ptr);
     ptr = vector_peek(vec);
